@@ -1,0 +1,7 @@
+google-genai
+PyGithub
+gspread
+google-auth
+fastapi
+uvicorn
+python-dotenv
