@@ -17,22 +17,6 @@ The agent does all of this automatically in one command.
 
 ---
 
-## How engineers should log hours
-
-Engineers write effort in any PR or issue comment. The AI understands any format:
-
-```
-Efforts: 5h
-Effort - 1 day
-BLE Log [spent : 3h]
-Effort - half day
-actual: 3.5h | planned: 4h
-```
-
-Hours should appear in the comment — the agent reads the full comment body. If no hours are mentioned, the comment is skipped automatically.
-
----
-
 ## Setup — do this once
 
 ### Step 1 — Download the project
@@ -225,22 +209,6 @@ One row per active repository. Columns show planned and actual hours per enginee
 One row per active engineer. Shows available hours (160h), planned hours (fill manually), and actual hours pulled automatically from Section 1.
 
 > Planned hours and Target columns are left empty for the manager to fill in manually.
-
----
-
-## Running automatically every month
-
-To run the agent automatically on the first of each month, add a scheduled task:
-
-**Mac/Linux (cron):**
-```bash
-crontab -e
-# Add this line — runs at 9am on the 1st of every month:
-0 9 1 * * cd /path/to/effort-tracker-agent && source venv/bin/activate && python3 run_agent.py
-```
-
-**Windows (Task Scheduler):**
-Create a monthly task that runs `python3 run_agent.py` from the project folder.
 
 ---
 
